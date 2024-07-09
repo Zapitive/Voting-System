@@ -4,6 +4,7 @@ from views import views
 app = Flask(__name__)
 
 app.register_blueprint(views)
+app.secret_key = 'jncajnvjna'
 
 if __name__ == '__main__':
     app.run( port=5000, debug=True)

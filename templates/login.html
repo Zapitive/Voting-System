@@ -1,0 +1,72 @@
+<head>
+    <link rel="stylesheet" href="../static/login.css">
+    <script src="{{url_for('static', filename='login.js')}}"></script>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <script>
+        alert('{{message}}');
+      </script>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+    <div class="container">
+        <div class="login-div">
+            <h1>Login</h1>
+            <button id="login-supp-btn" onClick="fnc(this.id)">Already have an account ?</button>
+            <div class="forml-div" id="forml-div">
+                <form method="POST" action="{{url_for('views.success')}}">
+                    {{ form.csrf_token }}
+                    <div class="form-left">
+                        <ul class="form-el">
+                            <li>{{ form.name.label }}</li>
+                            <li>{{ form.email.label }}</li>
+                            <li>{{ form.password.label }}</li>
+                            <li>{{ form.confirm_password.label }}</li>
+                        </ul>
+                    </div>
+                    <div class="form-right">
+                        <ul class="form-el">
+                            <li> {{ form.name(size=20,class='input-el') }}</li>
+                            <li>{{ form.email(size=20,class='input-el') }}</li>
+                            <li> {{ form.password(size=20,class='input-el') }}</li>
+                            <li> {{ form.confirm_password(size=20,class='input-el') }}</li>     
+                        </ul>
+                    </div>
+                    <input type="submit" value="submit" class="submit-btn">
+                </form>
+            </div>
+        </div>
+        <div class="signup-div">
+            <h1>Signup</h1>
+            <button id="signup-supp-btn" onClick="fnc(this.id)">Don't have an account ?</button>
+            <div class="form-div" id="form-div">
+                <form method="POST" action="{{url_for('views.success')}}">
+                    {{ form.csrf_token }}
+                    <div class="form-left">
+                        <ul class="form-el">
+                            <li>{{ form.name.label }}</li>
+                            <li>{{ form.email.label }}</li>
+                            <li>{{ form.password.label }}</li>
+                            <li>{{ form.confirm_password.label }}</li>
+                        </ul>
+                    </div>
+                    <div class="form-right">
+                        <ul class="form-el">
+                            <li> {{ form.name(size=20,class='input-el') }}</li>
+                            <li>{{ form.email(size=20,class='input-el') }}</li>
+                            <li> {{ form.password(size=20,class='input-el') }}</li>
+                            <li> {{ form.confirm_password(size=20,class='input-el') }}</li>
+                        </ul>
+                    </div>
+                    <input type="submit" value="Submit" class="submit-btn">
+                </form>
+        </div>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,65 @@
+
+
+.form-div div{
+    width: 50%;
+    height: 40%;
+}
+
+.form-left{
+    float: left;
+    
+}
+
+.form-right{
+    float: right;
+}
+
+.form-left ul{
+    float: right;
+}
+
+.form-right ul{
+    float: left;
+    padding: 0;
+}
+
+
+.form-el{
+    width: 50%;
+    height: 10vh;
+    list-style: none;
+
+}
+
+.form-left li{
+    text-align: end;
+    margin-bottom: 2.5vh;
+}
+
+.form-right li{
+    margin-bottom: 2.29vh;
+    padding-left: 3%;
+}
+
+.input-el{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px #000 solid;
+}
+
+.submit-btn{
+    width: 30%;
+    font-size: 25px;
+    margin-left: 50%;
+    margin-top: 10%;
+    transform: translateX(-50%);
+    border: #000 5px solid;
+    background-color: #fff;
+    transition: 0.5s;
+}
+
+.submit-btn:hover{
+    border: #000 3px solid;
+    font-size: 28px;
+    cursor: pointer;
+}

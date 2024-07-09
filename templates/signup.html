@@ -1,0 +1,31 @@
+<head>
+    <link rel="stylesheet" href="../static/signup.css">
+</head>
+<body>
+    <div class="login-div">
+        <h1>Login</h1>
+    </div>
+    <div class="form-div">
+        <h1>SignUp</h1>
+    <form method="POST" action="/">
+        {{ form.csrf_token }}
+        <div class="form-left">
+            <ul class="form-el">
+                <li>{{ form.name.label }}</li>
+                <li>{{ form.email.label }}</li>
+                <li>{{ form.password.label }}</li>
+                <li>{{ form.confirm_password.label }}</li>
+            </ul>
+        </div>
+        <div class="form-right">
+            <ul class="form-el">
+                <li> {{ form.name(size=20,class='input-el') }}</li>
+                <li>{{ form.email(size=20,class='input-el') }}</li>
+                <li> {{ form.password(size=20,class='input-el') }}</li>
+                <li> {{ form.confirm_password(size=20,class='input-el') }}</li>     
+            </ul>
+        </div>
+        <input type="submit" value="Submit" class="submit-btn">
+    </form>
+    </div>
+</body>
